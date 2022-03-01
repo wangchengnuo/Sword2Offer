@@ -49,15 +49,14 @@ public class Solution {
             return 0;
         }
         // 定义状态，第i天卖出的最大收益
-        int[] dp = new int[prices.length];
-        dp[0] = 0;
+        int maxProfit = 0;
         int cost = prices[0];
         for (int i = 1; i < prices.length; i++) {
-            dp[i] = Math.max(dp[i - 1], prices[i] - cost);
+            maxProfit = Math.max(maxProfit, prices[i] - cost);
             cost = Math.min(cost, prices[i]);
         }
 
-        return dp[prices.length - 1];
+        return maxProfit;
     }
 
     public static void main(String[] args) {
