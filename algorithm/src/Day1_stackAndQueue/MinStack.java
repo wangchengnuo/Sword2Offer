@@ -1,4 +1,4 @@
-package StackAndQueue;
+package Day1_stackAndQueue;
 
 import java.util.Deque;
 import java.util.LinkedList;

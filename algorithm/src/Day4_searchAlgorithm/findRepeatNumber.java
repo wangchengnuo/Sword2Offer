@@ -1,4 +1,4 @@
-package SearchAlgorithm_Easy;
+package Day4_searchAlgorithm;
 
 import java.util.HashSet;
 import java.util.Set;

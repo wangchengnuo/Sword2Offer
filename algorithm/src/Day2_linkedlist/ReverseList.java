@@ -1,4 +1,4 @@
-package Linkedlist;
+package Day2_linkedlist;
 
 /**
  * 反转链表

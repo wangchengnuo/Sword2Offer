@@ -1,4 +1,4 @@
-package Linkedlist;
+package Day2_linkedlist;
 
 // Definition for a Node.
 class Node {

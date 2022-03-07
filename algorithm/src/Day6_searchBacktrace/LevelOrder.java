@@ -1,4 +1,4 @@
-package Day6SearchBacktrace_Easy;
+package Day6_searchBacktrace;
 
 import java.util.*;
 

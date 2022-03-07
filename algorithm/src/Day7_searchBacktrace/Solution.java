@@ -1,4 +1,4 @@
-package Day7_searchBacktrace_easy;
+package Day7_searchBacktrace;
 
 class Solution {
 

@@ -1,4 +1,4 @@
-package Linkedlist;
+package Day2_linkedlist;
 
 import java.util.HashMap;
 import java.util.Map;

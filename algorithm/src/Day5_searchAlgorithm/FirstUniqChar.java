@@ -1,4 +1,4 @@
-package Day5_search_algorithm;
+package Day5_searchAlgorithm;
 
 import java.util.HashMap;
 import java.util.Map;

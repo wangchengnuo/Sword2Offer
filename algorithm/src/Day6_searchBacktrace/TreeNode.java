@@ -1,4 +1,4 @@
-package Day7_searchBacktrace_easy;
+package Day6_searchBacktrace;
 
 public class TreeNode {
     int val;
