@@ -1,5 +1,8 @@
 package Day24_math;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Solution {
 
     /**
@@ -26,5 +29,62 @@ public class Solution {
             return (int) Math.pow(3, a - 1) * 4;
         }
         return (int) Math.pow(3, a) * 2;
+    }
+
+    /**
+     * 输入一个正整数 target ，输出所有和为 target 的连续正整数序列（至少含有两个数）。
+     * <p>
+     * 序列内的数字由小到大排列，不同序列按照首个数字从小到大排列。
+     */
+    public int[][] findContinuousSequence(int target) {
+        List<int[]> res = new ArrayList<int[]>();
+        for (int i = 1; i < target; i++) {
+            int tmp = 0;
+            int column = 0;
+            for (int j = i; j < target; j++) {
+                tmp += j;
+                if (tmp == target) {
+                    int[] tmpRes = new int[j - i + 1];
+                    for (int k = i; k <= j; k++) {
+                        tmpRes[column++] = k;
+                    }
+                    res.add(tmpRes);
+                    break;
+                }
+                if (tmp > target) {
+                    break;
+                }
+            }
+        }
+        return res.toArray(new int[0][]);
+    }
+
+    /**
+     * 0,1,···,n-1这n个数字排成一个圆圈，从数字0开始，每次从这个圆圈里删除第m个数字（删除后从下一个数字开始计数）。求出这个圆圈里剩下的最后一个数字。
+     * <p>
+     * 例如，0、1、2、3、4这5个数字组成一个圆圈，从数字0开始每次删除第3个数字，则删除的前4个数字依次是2、0、4、1，因此最后剩下的数字是3。
+     */
+    public int lastRemaining(int n, int m) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            list.add(i);
+        }
+        int removeIndex = 0;
+        while (list.size() > 1) {
+            removeIndex = (removeIndex + m) % list.size();
+            if (removeIndex == 0) {
+                list.remove(list.size() - 1);
+            } else {
+                list.remove(--removeIndex);
+            }
+        }
+        return list.get(0);
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        //System.out.println(Arrays.deepToString(solution.findContinuousSequence(9)));
+        System.out.println(solution.lastRemaining(5, 3));
+        System.out.println(solution.lastRemaining(10, 17));
     }
 }
